@@ -10,6 +10,14 @@ import { Component } from '@angular/core';
   I {{ title }} 
   {{ teams.baseball }}
   </h1>
+
+  <input #count value="my value" (keyup)=0>
+  <p>{{ count.value.length }}</p>
+
+  <button (click)="myFunc(count)">My button</button>
+
+  <h1 #myH1>My Title</h1>
+  <p>{{ myH1.innerText }}</p>
   
   <ul>
     <li 
@@ -48,6 +56,11 @@ import { Component } from '@angular/core';
 
 })
 export class AppComponent {
+
+  myFunc(count) {
+    console.log(count.value)
+    alert(count.value)
+  }
   title = 'app';
 
   likes = 'asdf';
