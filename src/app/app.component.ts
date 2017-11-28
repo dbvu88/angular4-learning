@@ -5,13 +5,27 @@ import { Component } from '@angular/core';
   //templateUrl: './app.component.html',
   
   template: `
+  <h1>
+  Inline HTML
+  I {{ title }} 
+  {{ teams.baseball }}
+  </h1>
+  
+  <ul>
+    <li 
+    *ngFor="let team of sportTeams; 
+    let i = index;
+    let last = last
+    ">{{ i + 1 }}. {{ team.baseball }} <strong *ngIf="last">Hey, I'm last</strong></li>
+  </ul>
+    
+  <p>It certainly does!</p>
+
   <div [ngSwitch]="likes">
     <div *ngSwitchCase="'baseball'">// Display baseball content</div>
     <div *ngSwitchCase="'football'">// Display football content</div>
     <div *ngSwitchCase="'baseketball'">// Display baseketball content</div>
   </div>
-  <div [ngSwitchCase="'baseball'"]
-
 
   <h1 *ngIf="!title; else mytemplate">I'm here</h1>
 
@@ -25,21 +39,7 @@ import { Component } from '@angular/core';
   <ng-template #falsetempl>I'm false<ng-template>
   
   
-  <h1>
-  Inline HTML <br>
-  I {{ title }} <br>
-  {{ teams.baseball }}
-  </h1>
-  
-  <ul>
-    <li 
-    *ngFor="let team of sportTeams; 
-    let i = index;
-    let last = last
-    ">{{ i + 1 }}. {{ team.baseball }} <strong *ngIf="last">Hey, I'm last</strong></li>
-  </ul>
-    
-  <p>It certainly does!</p>
+ 
   `,
   styleUrls: ['./app.component.css']
    
