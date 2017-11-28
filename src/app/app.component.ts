@@ -5,6 +5,13 @@ import { Component } from '@angular/core';
   //templateUrl: './app.component.html',
   
   template: `
+  <div [ngSwitch]="likes">
+    <div *ngSwitchCase="'baseball'">// Display baseball content</div>
+    <div *ngSwitchCase="'football'">// Display football content</div>
+    <div *ngSwitchCase="'baseketball'">// Display baseketball content</div>
+  </div>
+  <div [ngSwitchCase="'baseball'"]
+
 
   <h1 *ngIf="!title; else mytemplate">I'm here</h1>
 
@@ -43,6 +50,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  likes = 'baseball';
 
   teams = {
     baseball: 'Indians',
