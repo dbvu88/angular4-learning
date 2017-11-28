@@ -25,6 +25,7 @@ import { Component } from '@angular/core';
     <div *ngSwitchCase="'baseball'">// Display baseball content</div>
     <div *ngSwitchCase="'football'">// Display football content</div>
     <div *ngSwitchCase="'baseketball'">// Display baseketball content</div>
+    <div *ngSwitchDefault>No matches found.</div>
   </div>
 
   <h1 *ngIf="!title; else mytemplate">I'm here</h1>
@@ -38,8 +39,6 @@ import { Component } from '@angular/core';
   <ng-template #truthtempl>I'm true<ng-template>
   <ng-template #falsetempl>I'm false<ng-template>
   
-  
- 
   `,
   styleUrls: ['./app.component.css']
    
@@ -51,7 +50,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
 
-  likes = 'baseball';
+  likes = 'asdf';
 
   teams = {
     baseball: 'Indians',
